@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Order summary card</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --Paleblue: hsl(225, 100%, 94%);
+        --Brightblue: hsl(245, 75%, 52%);
+        --Verypaleblue: hsl(225, 100%, 98%);
+        --Desaturatedblue: hsl(224, 23%, 55%);
+        --Darkblue: hsl(223, 47%, 23%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-image: url(images/pattern-background-desktop.svg);
+        background-color: var(--Paleblue);
+        background-repeat: no-repeat;
+        background-size: contain;
+        font-family: "Red Hat Display", sans-serif;
+        font-size: 16px;
+      }
+
+      main {
+        width: 100%;
+        max-width: 410px;
+        height: 100%;
+        min-height: 60vh;
+        background-color: #ffffff;
+        margin: auto;
+        margin-top: 7rem;
+        border-radius: 20px;
+      }
+
+      main img {
+        width: 100%;
+        max-width: 410px;
+        border-radius: 20px 20px 0 0;
+      }
+
+      main h1 {
+        font-weight: 900;
+        margin-top: 2.5rem;
+        text-align: center;
+        color: var(--Darkblue);
+      }
+
+      main p.text {
+        margin-top: 1rem;
+        line-height: 1.7rem;
+        text-align: center;
+        color: var(--Desaturatedblue);
+      }
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+      }
+
+      .payment {
+        width: 100%;
+        height: 100%;
+        max-width: 330px;
+        min-height: 9vh;
+        background-color: #f8f9fe;
+        border-radius: 8px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 1rem;
+      }
+
+      .payment img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        max-width: 50px;
+        margin-right: -45px;
+        margin-left: -10px;
+      }
+
+      .payment h5 a {
+        color: #534cbe;
+        font-weight: 800;
+        font-size: 12px;
+      }
+
+      .payment h5 a:hover {
+        color: #766cf1;
+        text-decoration: none;
+      }
+
+      .payment span.pricing {
+        color: var(--Darkblue);
+        font-weight: bold;
+      }
+
+      .payment span.pricing:nth-child(2) {
+        line-height: 2.4vh;
+      }
+
+      .payment span.pricing span.not-bold {
+        font-weight: normal;
+        color: var(--Desaturatedblue);
+      }
+
+      .proceed-button {
+        width: 100%;
+        height: 100%;
+        max-width: 330px;
+        min-height: 4vh;
+        background-color: var(--Brightblue);
+        border-radius: 10px;
+        text-align: center;
+        line-height: 4vh;
+        margin: auto;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        margin-top: 2rem;
+      }
+
+      .proceed-button:hover {
+        background-color: #766cf1;
+      }
+
+      .cancel-button {
+        width: 100%;
+        height: 100%;
+        min-height: 4vh;
+        color: var(--Desaturatedblue);
+        font-weight: bold;
+        font-size: 14px;
+        margin-top: 1.5rem;
+        text-align: center;
+      }
+
+      .cancel-button:hover {
+        cursor: pointer;
+        color: #000;
+      }
+
+      .attribution {
+        margin-top: 1rem;
+      }
+
+      @media screen and (max-width: 1024px) {
+        main {
+          min-height: 30vh;
+        }
+
+        main h1 {
+          margin-top: 1.8rem;
+        }
+      }
+
+      @media screen and (max-width: 375px) {
+        body {
+          background-image: url(images/pattern-background-mobile.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+
+        main {
+          max-width: 320px;
+          font-size: 1rem;
+          margin-top: 4rem;
+        }
+
+        .payment {
+          max-width: 270px;
+        }
+
+        .payment img {
+          margin-right: -30px;
+        }
+
+        .payment span.pricing:nth-child(2) {
+          line-height: 3vh;
+        }
+
+        .proceed-button {
+          max-width: 270px;
+          min-height: 5vh;
+          line-height: 5vh;
+        }
+
+        .cancel-button {
+          margin-top: 1rem;
+        }
+
+        .attribution {
+          margin-bottom: 2vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="images/illustration-hero.svg" alt="" />
+
+      <h1>Order Summary</h1>
+      <p class="text">
+        You can now listen to millions of songs,<br />
+        audiobooks, and podcasts on any device <br />
+        anywhere you like!
+      </p>
+
+      <div class="container">
+        <div class="payment">
+          <img src="/images/icon-music.svg" alt="" />
+          <span class="pricing">
+            Annual Plan <br />
+            <span class="not-bold">$59.99/year</span>
+          </span>
+          <h5><a href="">Change</a></h5>
+        </div>
+        <div class="proceed-button">Proceed to Payment</div>
+        <div class="cancel-button">Cancel Order</div>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Francisco A. Tingzon Jr.</a>.
+    </div>
+  </body>
+</html>
